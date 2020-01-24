@@ -1,0 +1,23 @@
+{
+    "name": "GPAD",
+    "version": "1.1",
+    "description": "GPAD Things",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["index.js"],
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://socialclub.rockstargames.com/member/*/games"],
+            "js": ["inject.js"],
+            "run_at": "document_start",
+            "all_frames": true,
+            "match_about_blank": true
+        }
+    ],
+    "permissions": [
+        "https://socialclub.rockstargames.com/member/*/games",
+        "https://scapi.rockstargames.com/*"
+    ]
+}
